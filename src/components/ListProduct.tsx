@@ -48,6 +48,15 @@ function ListProduct() {
                 </td>
               </tr>
             )}
+            {
+              !loading && products.length === 0 && (
+                <tr>
+                  <td colSpan={3} className="text-center py-4">
+                    No products to review
+                  </td>
+                </tr>
+              )
+            }
             {!loading &&
               products.map((product) => (
                 <tr key={product.id}>
