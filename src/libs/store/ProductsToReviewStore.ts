@@ -1,6 +1,6 @@
-import { create } from 'zustand'
-import { Product } from '../types/types'
-import api from '../services/Api';
+import { create } from "zustand";
+import { Product } from "../types/types";
+import api from "../services/Api";
 
 interface ProductStore {
   products: Product[];
@@ -18,10 +18,11 @@ const useProductStore = create<ProductStore>((set) => ({
   fetchProducts: async () => {
     set({ loading: true, error: null });
     try {
-      const response = await api.get("/product?page=1&limit=10&revised=false")
+      const response = await api.get("/product?page=1&limit=10&revised=false");
       set({ products: response.data, loading: false });
     } catch (error) {
-      set({ error: 'Error al cargar productos', loading: false });
+      console.log(error);
+      set({ error: "Error al cargar productos", loading: false });
     }
   },
 
@@ -30,12 +31,13 @@ const useProductStore = create<ProductStore>((set) => ({
     try {
       await api.delete(`/product/${id}`);
       set((state) => ({
-        products: state.products.filter(product => product.id !== id),
+        products: state.products.filter((product) => product.id !== id),
       }));
     } catch (error) {
-      set({ error: 'Error al eliminar producto' });
+      console.log(error);
+      set({ error: "Error al eliminar producto" });
     }
-  }
+  },
 }));
 
 export default useProductStore;

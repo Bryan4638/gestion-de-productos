@@ -1,6 +1,7 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import { Product } from '../libs/types/types';
+import Image from 'next/image';
 
 interface ProductModalProps {
   product: Product;
@@ -20,7 +21,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
         
         <div className="flex flex-col md:flex-row gap-6">
           <div className="md:w-1/2">
-            <img
+            <Image
               src={product.urlImagen}
               alt={product.name}
               className="w-full h-64 object-cover rounded-lg"

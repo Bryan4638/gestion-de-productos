@@ -9,7 +9,7 @@ export default function Home() {
   const { fetchProducts } = useProductStore();
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-7xl mx-auto">

@@ -22,7 +22,7 @@ function ReviewedProducts() {
     if (products.length === 0) {
       initialize();
     }
-  }, []);
+  }, [initialize, products.length]);
 
   useEffect(() => {
     if (isLoading || !hasMore) return;

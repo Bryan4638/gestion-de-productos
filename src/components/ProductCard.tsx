@@ -1,6 +1,7 @@
 import React from "react";
 import { Eye, Trash2 } from "lucide-react";
 import { Product } from "../libs/types/types";
+import Image from "next/image";
 
 interface ProductCardProps {
   product: Product;
@@ -15,7 +16,7 @@ export function ProductCard({
 }: ProductCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img
+      <Image
         src={product.urlImagen}
         alt={product.name}
         className="w-full h-48 object-cover"

@@ -1,6 +1,7 @@
 import useProductStore from "@/libs/store/ProductsToReviewStore";
 import { useProductStoreWithAdapter } from "@/libs/store/ReviewedProductStore";
 import { CheckCircle, XCircle } from "lucide-react";
+import Image from "next/image";
 
 function ListProduct() {
   const { addProduct } = useProductStoreWithAdapter();
@@ -65,7 +66,7 @@ function ListProduct() {
                 <tr key={product.id}>
                   <td className="px-6 py-4">
                     <div className="flex items-center">
-                      <img
+                      <Image
                         className="h-10 w-10 rounded-full object-cover"
                         src={product.urlImagen}
                         alt=""
