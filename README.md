@@ -43,6 +43,19 @@ pnpm dev
 | PUT    | /product/{id}    | Actualizar producto            |
 | DELETE | /product/{id}    | Eliminar producto              |
 
+## 💡 Notas Importantes
+
+### Infinite Scroll con Indicador de Carga
+- He implementado un **indicador de carga (spinner/delay)** durante la peticion al localStorage para cargar los nuevos productos al hacer scroll
+- Esto permite:
+  - Visualizar claramente el funcionamiento del infinite scroll
+  - Mejorar la experiencia de usuario durante la carga
+  - Evitar que los nuevos elementos aparezcan bruscamente
+
+- El tiempo se puede cambiar en el archivo conf.ts (TIME_DELAY=2000) tiempo en milisegundos
+
+
+
 ## 📦 Comandos útiles
 
 ```bash

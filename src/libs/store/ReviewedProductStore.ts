@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { ProductState } from "@/libs/types/types";
 import { LocalStorageAdapter } from "@/libs/adapters/LocalStorageAdapter";
+import { TIME_DELAY } from "@/conf";
 
 export const useProductStoreWithAdapter = create<ProductState>((set, get) => ({
   products: [],
@@ -55,7 +56,7 @@ export const useProductStoreWithAdapter = create<ProductState>((set, get) => ({
         hasMore: endIdx < allProducts.length,
         isLoading: false,
       });
-    }, 2000);
+    }, TIME_DELAY);
   },
 
   resetPagination: () => {
