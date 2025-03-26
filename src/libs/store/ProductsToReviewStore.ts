@@ -15,7 +15,6 @@ const useProductStore = create<ProductStore>((set) => ({
   loading: false,
   error: null,
 
-  // Obtener productos desde la API
   fetchProducts: async () => {
     set({ loading: true, error: null });
     try {
@@ -26,7 +25,6 @@ const useProductStore = create<ProductStore>((set) => ({
     }
   },
 
-  // Eliminar un producto
   deleteProduct: async (id) => {
     set({ error: null });
     try {

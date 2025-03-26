@@ -20,15 +20,9 @@ class ApiAdapter {
     return await this.instance().get(`${this.baseURL}${endpoint}`);
   }
 
-  // Método para hacer solicitudes POST
-  
-
-  // Método para hacer solicitudes DELETE
   async delete(endpoint: string) {
     return await this.instance().delete(`${this.baseURL}${endpoint}`);
   }
-
-  // Puedes agregar más métodos como put, delete, etc.
 }
 
 export default ApiAdapter;

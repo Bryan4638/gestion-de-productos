@@ -1,11 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BookmarkCheck, ShoppingBag } from "lucide-react";
 import ListProduct from "@/components/ListProduct";
 import ReviewedProducts from "@/components/ReviewedProducts";
+import useProductStore from "@/libs/store/ProductsToReviewStore";
 export default function Home() {
   const [activeTab, setActiveTab] = useState("products");
-
+  const { fetchProducts } = useProductStore();
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-7xl mx-auto">

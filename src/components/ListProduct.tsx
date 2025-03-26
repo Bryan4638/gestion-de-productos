@@ -1,16 +1,13 @@
 import useProductStore from "@/libs/store/ProductsToReviewStore";
 import { useProductStoreWithAdapter } from "@/libs/store/ReviewedProductStore";
 import { CheckCircle, XCircle } from "lucide-react";
-import { useEffect } from "react";
 
 function ListProduct() {
   const { addProduct } = useProductStoreWithAdapter();
 
   const { products, deleteProduct, loading, fetchProducts } = useProductStore();
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+ 
   const handleReviewProduct = (
     productId: string,
     status: "approved" | "rejected"
