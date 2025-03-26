@@ -21,7 +21,15 @@ export const useProductStoreWithAdapter = create<ProductState>((set, get) => ({
   },
 
   addProduct: (product) => {
-    const updatedProducts = [...LocalStorageAdapter.load(), product];
+    const existingProducts = LocalStorageAdapter.load();
+    const productExists = existingProducts.some((p) => p.id === product.id);
+
+    if (productExists) {
+      console.warn("El producto ya existe y no se puede agregar nuevamente.");
+      return;
+    }
+
+    const updatedProducts = [...existingProducts, product];
     LocalStorageAdapter.save(updatedProducts);
     set({
       currentPage: 0,

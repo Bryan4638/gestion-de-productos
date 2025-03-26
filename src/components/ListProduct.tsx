@@ -26,6 +26,14 @@ function ListProduct() {
   return (
     <section className="mb-12">
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="w-full p-4 flex justify-end items-center">
+          <button
+            onClick={fetchProducts}
+            className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Refresh
+          </button>
+        </div>
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
@@ -48,15 +56,13 @@ function ListProduct() {
                 </td>
               </tr>
             )}
-            {
-              !loading && products.length === 0 && (
-                <tr>
-                  <td colSpan={3} className="text-center py-4">
-                    No products to review
-                  </td>
-                </tr>
-              )
-            }
+            {!loading && products.length === 0 && (
+              <tr>
+                <td colSpan={3} className="text-center py-4">
+                  No products to review
+                </td>
+              </tr>
+            )}
             {!loading &&
               products.map((product) => (
                 <tr key={product.id}>
@@ -101,6 +107,7 @@ function ListProduct() {
               ))}
           </tbody>
         </table>
+        
       </div>
     </section>
   );
