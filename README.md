@@ -55,24 +55,6 @@ pnpm dev
 - El tiempo se puede cambiar en el archivo conf.ts (TIME_DELAY=2000) tiempo en milisegundos
 
 
-
-## 📦 Comandos útiles
-
-```bash
-# Desarrollo
-npm run dev
-
-# Producción
-npm run build
-npm start
-
-# Linter
-npm run lint
-
-# Tests (si los tienes)
-npm run test
-```
-
 ## 📝 Licencia
 
 MIT
