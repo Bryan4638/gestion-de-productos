@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    path: '', // Elimina el prefijo /_next/image
-    loader: 'imgix', // o 'cloudinary', 'akamai', etc.
+   images: {
+    loader: 'default',
     domains: ['picsum.photos'],
+    unoptimized: true // Desactiva la optimización de imágenes
   }
 };
 
