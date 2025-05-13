@@ -68,8 +68,10 @@ function ListProduct() {
                     <div className="flex items-center">
                       <Image
                         className="h-10 w-10 rounded-full object-cover"
+                        width={1920}
+                        height={1080}
                         src={product.urlImagen}
-                        alt=""
+                        alt={product.name}
                       />
                       <div className="ml-4">
                         <div className="text-sm font-medium text-gray-900">
